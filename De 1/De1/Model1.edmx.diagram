@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="5599d4433ee2499ba7d526ac07695385" Name="Diagram1">
+        <EntityTypeShape EntityType="QLBanQuanAoModel.AnhChiTietSP" Width="1.5" PointX="7.5" PointY="2.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLBanQuanAoModel.ChiTietDonHang" Width="1.5" PointX="9.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLBanQuanAoModel.ChiTietSPBan" Width="1.5" PointX="7.5" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLBanQuanAoModel.DonHang" Width="1.5" PointX="7.5" PointY="8.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLBanQuanAoModel.MauSac" Width="1.5" PointX="3" PointY="8.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLBanQuanAoModel.NguoiDung" Width="1.5" PointX="5.25" PointY="8.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLBanQuanAoModel.PhanLoai" Width="1.5" PointX="0.75" PointY="3.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLBanQuanAoModel.PhanLoaiPhu" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLBanQuanAoModel.SanPham" Width="1.5" PointX="3" PointY="2.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLBanQuanAoModel.SPTheoMau" Width="1.5" PointX="5.25" PointY="3.5" IsExpanded="true" />
+        <AssociationConnector Association="QLBanQuanAoModel.FK__AnhChiTie__MaSPT__49C3F6B7" ManuallyRouted="false" />
+        <AssociationConnector Association="QLBanQuanAoModel.FK__ChiTietDo__MaChi__4F7CD00D" ManuallyRouted="false" />
+        <AssociationConnector Association="QLBanQuanAoModel.FK__ChiTietDo__MaDon__5070F446" ManuallyRouted="false" />
+        <AssociationConnector Association="QLBanQuanAoModel.FK__ChiTietSP__MaSPT__4CA06362" ManuallyRouted="false" />
+        <AssociationConnector Association="QLBanQuanAoModel.FK__DonHang__MaNguoi__398D8EEE" ManuallyRouted="false" />
+        <AssociationConnector Association="QLBanQuanAoModel.FK__SPTheoMau__MaMau__46E78A0C" ManuallyRouted="false" />
+        <AssociationConnector Association="QLBanQuanAoModel.FK__SanPham__MaPhanL__412EB0B6" ManuallyRouted="false" />
+        <AssociationConnector Association="QLBanQuanAoModel.FK__SanPham__MaPhanL__403A8C7D" ManuallyRouted="false" />
+        <AssociationConnector Association="QLBanQuanAoModel.FK__SPTheoMau__MaSan__45F365D3" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
