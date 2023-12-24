@@ -1,6 +1,7 @@
 ﻿@{
     ViewBag.Title = "Home Page";
     List<PhanLoai> phanLoai = ViewBag.phanLoai;
+    List<SanPham> sapPham = ViewBag.sanPham;
 }
 
 <div class="fs_menu_overlay"></div>
@@ -120,185 +121,42 @@
                         @foreach (var pl in phanLoai)
                         {
                             <li class="grid_sorting_button button d-flex flex-column justify-content-center align-items-center" data-filter=".women">@pl.PhanLoaiChinh</li>
-
                         }
+
                         @*<li class="grid_sorting_button button d-flex flex-column justify-content-center align-items-center" data-filter=".women">women's</li>
                             <li class="grid_sorting_button button d-flex flex-column justify-content-center align-items-center" data-filter=".accessories">accessories</li>
                             <li class="grid_sorting_button button d-flex flex-column justify-content-center align-items-center" data-filter=".men">men's</li>*@
-
-
                     </ul>
                 </div>
             </div>
         </div>
         <div class="row">
             <div class="col">
-                <div class="product-grid" data-isotope='{ "itemSelector": ".product-item", "layoutMode": "fitRows" }'>
+                <div id="product-container" class="product-grid" data-isotope='{ "itemSelector": ".product-item", "layoutMode": "fitRows" }'>
 
                     <!-- Product 1 -->
 
-                    <div class="product-item men">
-                        <div class="product discount product_filter">
-                            <div class="product_image">
-                                <img src="/Content/images/product_1.png" alt="">
+                    @foreach (var sp in sapPham)
+                    {
+                        <div class="product-item men">
+                            <div class="product discount product_filter">
+                                <div class="product_image">
+                                    @*<img src="/Content/images/product_1.png" alt="">*@
+                                    <img src="@sp.AnhDaiDien" alt="">
+                                </div>
+                                <div class="favorite favorite_left"></div>
+                                <div class="product_bubble product_bubble_right product_bubble_red d-flex flex-column align-items-center"><span>-$20</span></div>
+                                <div class="product_info">
+                                    <h6 class="product_name"><a href="single.html">@sp.TenSanPham</a></h6>
+                                    <div class="product_price"><span>@sp.DonGiaBanNhoNhat đ</span></div>
+                                </div>
                             </div>
-                            <div class="favorite favorite_left"></div>
-                            <div class="product_bubble product_bubble_right product_bubble_red d-flex flex-column align-items-center"><span>-$20</span></div>
-                            <div class="product_info">
-                                <h6 class="product_name"><a href="single.html">Fujifilm X100T 16 MP Digital Camera (Silver)</a></h6>
-                                <div class="product_price">$520.00<span>$590.00</span></div>
-                            </div>
-                        </div>
-                        <div class="red_button add_to_cart_button"><a href="#">add to cart</a></div>
-                    </div>
-
-                    <!-- Product 2 -->
-
-                    <div class="product-item women">
-                        <div class="product product_filter">
-                            <div class="product_image">
-                                <img src="/Content/images/product_2.png" alt="">
-                            </div>
-                            <div class="favorite"></div>
-                            <div class="product_bubble product_bubble_left product_bubble_green d-flex flex-column align-items-center"><span>new</span></div>
-                            <div class="product_info">
-                                <h6 class="product_name"><a href="single.html">Samsung CF591 Series Curved 27-Inch FHD Monitor</a></h6>
-                                <div class="product_price">$610.00</div>
+                            <div class="red_button add_to_cart_button">
+                                @Html.ActionLink("Sử sản phẩm", "Edit", new { maSP = @sp.MaSanPham })
                             </div>
                         </div>
-                        <div class="red_button add_to_cart_button"><a href="#">add to cart</a></div>
-                    </div>
+                    }
 
-                    <!-- Product 3 -->
-
-                    <div class="product-item women">
-                        <div class="product product_filter">
-                            <div class="product_image">
-                                <img src="/Content/images/product_3.png" alt="">
-                            </div>
-                            <div class="favorite"></div>
-                            <div class="product_info">
-                                <h6 class="product_name"><a href="single.html">Blue Yeti USB Microphone Blackout Edition</a></h6>
-                                <div class="product_price">$120.00</div>
-                            </div>
-                        </div>
-                        <div class="red_button add_to_cart_button"><a href="#">add to cart</a></div>
-                    </div>
-
-                    <!-- Product 4 -->
-
-                    <div class="product-item accessories">
-                        <div class="product product_filter">
-                            <div class="product_image">
-                                <img src="/Content/images/product_4.png" alt="">
-                            </div>
-                            <div class="product_bubble product_bubble_right product_bubble_red d-flex flex-column align-items-center"><span>sale</span></div>
-                            <div class="favorite favorite_left"></div>
-                            <div class="product_info">
-                                <h6 class="product_name"><a href="single.html">DYMO LabelWriter 450 Turbo Thermal Label Printer</a></h6>
-                                <div class="product_price">$410.00</div>
-                            </div>
-                        </div>
-                        <div class="red_button add_to_cart_button"><a href="#">add to cart</a></div>
-                    </div>
-
-                    <!-- Product 5 -->
-
-                    <div class="product-item women men">
-                        <div class="product product_filter">
-                            <div class="product_image">
-                                <img src="/Content/images/product_5.png" alt="">
-                            </div>
-                            <div class="favorite"></div>
-                            <div class="product_info">
-                                <h6 class="product_name"><a href="single.html">Pryma Headphones, Rose Gold & Grey</a></h6>
-                                <div class="product_price">$180.00</div>
-                            </div>
-                        </div>
-                        <div class="red_button add_to_cart_button"><a href="#">add to cart</a></div>
-                    </div>
-
-                    <!-- Product 6 -->
-
-                    <div class="product-item accessories">
-                        <div class="product discount product_filter">
-                            <div class="product_image">
-                                <img src="/Content/images/product_6.png" alt="">
-                            </div>
-                            <div class="favorite favorite_left"></div>
-                            <div class="product_bubble product_bubble_right product_bubble_red d-flex flex-column align-items-center"><span>-$20</span></div>
-                            <div class="product_info">
-                                <h6 class="product_name"><a href="#single.html">Fujifilm X100T 16 MP Digital Camera (Silver)</a></h6>
-                                <div class="product_price">$520.00<span>$590.00</span></div>
-                            </div>
-                        </div>
-                        <div class="red_button add_to_cart_button"><a href="#">add to cart</a></div>
-                    </div>
-
-                    <!-- Product 7 -->
-
-                    <div class="product-item women">
-                        <div class="product product_filter">
-                            <div class="product_image">
-                                <img src="/Content/images/product_7.png" alt="">
-                            </div>
-                            <div class="favorite"></div>
-                            <div class="product_info">
-                                <h6 class="product_name"><a href="single.html">Samsung CF591 Series Curved 27-Inch FHD Monitor</a></h6>
-                                <div class="product_price">$610.00</div>
-                            </div>
-                        </div>
-                        <div class="red_button add_to_cart_button"><a href="#">add to cart</a></div>
-                    </div>
-
-                    <!-- Product 8 -->
-
-                    <div class="product-item accessories">
-                        <div class="product product_filter">
-                            <div class="product_image">
-                                <img src="/Content/images/product_8.png" alt="">
-                            </div>
-                            <div class="favorite"></div>
-                            <div class="product_info">
-                                <h6 class="product_name"><a href="single.html">Blue Yeti USB Microphone Blackout Edition</a></h6>
-                                <div class="product_price">$120.00</div>
-                            </div>
-                        </div>
-                        <div class="red_button add_to_cart_button"><a href="#">add to cart</a></div>
-                    </div>
-
-                    <!-- Product 9 -->
-
-                    <div class="product-item men">
-                        <div class="product product_filter">
-                            <div class="product_image">
-                                <img src="/Content/images/product_9.png" alt="">
-                            </div>
-                            <div class="product_bubble product_bubble_right product_bubble_red d-flex flex-column align-items-center"><span>sale</span></div>
-                            <div class="favorite favorite_left"></div>
-                            <div class="product_info">
-                                <h6 class="product_name"><a href="single.html">DYMO LabelWriter 450 Turbo Thermal Label Printer</a></h6>
-                                <div class="product_price">$410.00</div>
-                            </div>
-                        </div>
-                        <div class="red_button add_to_cart_button"><a href="#">add to cart</a></div>
-                    </div>
-
-                    <!-- Product 10 -->
-
-                    <div class="product-item men">
-                        <div class="product product_filter">
-                            <div class="product_image">
-                                <img src="/Content/images/product_10.png" alt="">
-                            </div>
-                            <div class="favorite"></div>
-                            <div class="product_info">
-                                <h6 class="product_name"><a href="single.html">Pryma Headphones, Rose Gold & Grey</a></h6>
-                                <div class="product_price">$180.00</div>
-                            </div>
-                        </div>
-                        <div class="red_button add_to_cart_button"><a href="#">add to cart</a></div>
-                    </div>
                 </div>
             </div>
         </div>
@@ -664,3 +522,221 @@
         </div>
     </div>
 </div>
+
+
+@Scripts.Render("~/Content/js/jquery-3.2.1.min.js")
+
+<script>
+
+    function onChooseCategory(cateId) {
+        $.ajax({
+            url: '@Url.Action("GetProductByCategory", "Home")', // gọi tới action GetProductByCategory
+            type: 'GET',
+            dataType: 'json',
+            data: { cateId: cateId },
+            success: function (data) {
+
+                // data trả về
+                // xử lý data
+               
+                loadSanPham(data.sanPham)
+
+            },
+            error: function (jqXHR, textStatus, errorThrown) {
+                // Xử lý lỗi
+                console.log('AJAX Error:', textStatus, errorThrown);
+
+                // Chi tiết lỗi từ đối tượng jqXHR
+                console.log('Status Code:', jqXHR.status);
+                console.log('Response Text:', jqXHR.responseText);
+            }
+        });
+    }
+
+    function loadSanPham(sanPham) {
+        console.log(sanPham.length)
+        
+        // cái này là ô chứa toàn bộ items sản phẩm
+        let container = document.querySelector('#product-container');
+        container.style.position = 'relative'
+        container.style.height = '9000px'
+
+
+        // khi bấm dô phân loại thì những sản phẩm củ cần xóa đi để thêm sản phẩm mới
+        container.innerHTML = ''
+
+        // duyệt từng sản phẩm tạo item sản phẩm r them dô container
+        for (let i = 0; i < sanPham.length; i++) {
+            // Tạo một thẻ div với các class tương ứng
+            var productItem = document.createElement('div');
+            productItem.className = 'product-item men';
+
+            var product = document.createElement('div');
+            product.className = 'product discount product_filter';
+
+            var productImage = document.createElement('div');
+            productImage.className = 'product_image';
+
+            var img = document.createElement('img');
+            img.src = 'Đường_dẫn_ảnh'; // Thay thế 'Đường_dẫn_ảnh' bằng đường dẫn thực tế
+            img.alt = '';
+
+            var favorite = document.createElement('div');
+            favorite.className = 'favorite favorite_left';
+
+            var bubble = document.createElement('div');
+            bubble.className = 'product_bubble product_bubble_right product_bubble_red d-flex flex-column align-items-center';
+            bubble.innerHTML = '<span>-$20</span>';
+
+            var productInfo = document.createElement('div');
+            productInfo.className = 'product_info';
+
+            var productName = document.createElement('h6');
+            productName.className = 'product_name';
+            var productLink = document.createElement('a');
+            productLink.href = 'single.html'; // Thay thế 'single.html' bằng đường dẫn thực tế
+            productLink.textContent = 'Tên sản phẩm';
+            productName.appendChild(productLink);
+
+            var productPrice = document.createElement('div');
+            productPrice.className = 'product_price';
+            productPrice.innerHTML = '<span>Đơn giá đ</span>'; // Thay thế 'Đơn giá' và 'đ' bằng giá trị thực tế
+
+            var addToCartButton = document.createElement('div');
+            addToCartButton.className = 'red_button add_to_cart_button';
+            var cartLink = document.createElement('a');
+            cartLink.href = '#';
+            cartLink.textContent = 'add to cart';
+            addToCartButton.appendChild(cartLink);
+
+            // Thêm các phần tử vào thẻ cha
+            productImage.appendChild(img);
+            product.appendChild(productImage);
+            product.appendChild(favorite);
+            product.appendChild(bubble);
+            productInfo.appendChild(productName);
+            productInfo.appendChild(productPrice);
+            product.appendChild(productInfo);
+            productItem.appendChild(product);
+            productItem.appendChild(addToCartButton);
+
+            productItem.style.position = 'absolute'
+            productItem.style.left = '0px'
+            productItem.style.top = '0px'
+
+
+            // Thêm thẻ cha vào body hoặc một phần tử khác trong DOM
+            container.appendChild(productItem);
+
+
+
+
+            //// tạo thẻ div ngoài cùng
+            //let div_product_item = document.createElement('div');
+            //div_product_item.classList = 'product-item men'; // thêm class dô
+            //div_product_item.style.position = 'absolute'
+            //div_product_item.style.left = '517px'
+            //div_product_item.style.top = '0px'
+
+            //// tạo thẻ div tiếp theo
+            //let div_product_filter = document.createElement('div');
+            //div_product_filter.className = 'product discount product_filter'; // thêm class dô
+            //div_product_filter.style.borderRight = "none"
+
+            //// tạo thẻ div tiếp theo
+            //let div_product_image = document.createElement('div');
+            //div_product_image.className = 'product_image'; // thêm class dô
+
+            //// trong thẻ div div_product_image có thẻ <img>
+            //let img_AnhDaiDien = document.createElement('img')
+            //img_AnhDaiDien.src = sanPham[i].AnhDaiDien
+
+
+            //// tạo thẻ div tiếp theo
+            //let div_favorite_left = document.createElement('div');
+            //div_favorite_left.className = 'favorite favorite_left'; // thêm class dô
+
+            //// tạo thẻ div tiếp theo
+            //let div_product_bubble = document.createElement('div');
+            //div_product_bubble.className = 'product_bubble product_bubble_right product_bubble_red d-flex flex-column align-items-center'; // thêm class dô
+
+            //// trong div_product_bubble có span
+            //let span_in_product_bubble = document.createElement('span');
+            //span_in_product_bubble.innerHTML = '-$20' // giữ nguyên ban đầu vì đề k kêu sửa chỗ này
+
+            //// tạo thẻ div tiếp theo
+            //let div_product_info = document.createElement('div');
+            //div_product_info.className = 'product_info'; // thêm class dô
+
+            //// trong thẻ div product_info có 2 thẻ <h6> và <div> => phải tạo luôn
+            //let h6_product_name = document.createElement('h6'); // thẻ h6 thì để trong chuỗi là 'h6'
+            //h6_product_name.className = 'product_name';
+
+            //// trong h6 lại có thẻ a => tạo luôn
+            //let a_in_h6_ten_sp = document.createElement('a');
+            //a_in_h6_ten_sp.href = 'single.html';
+
+            //// thêm tên sản phẩm trong thẻ a, tên lấy từ danh sách mình duyệt
+            //a_in_h6_ten_sp.innerHTML = sanPham[i].TenSanPham;
+
+            //// thẻ div product price
+            //let div_product_price = document.createElement('div');
+            //div_product_price.className = 'product_price';
+
+            //// trong thẻ div product price có thẻ <span> giá sản phẩm
+            //let span_gia_sp = document.createElement('span')
+            //span_gia_sp.innerHTML = sanPham[i].DonGiaBanNhoNhat + ' đ';
+
+
+            //// button add to cart
+            //let a_add_to_card = document.createElement('a');
+            //a_add_to_card.href = '#'
+            //a_add_to_card.innerHTML = 'add to cart'
+
+            //let div_add_to_cart_button = document.createElement('div');
+            //div_add_to_cart_button.className = 'red_button add_to_cart_button'
+
+
+            ///* tạo hết r đó, giờ kết hợp các thẻ lại với nhau */
+            ///* kết hợp từ thẻ con bên trong đến thẻ cha bên ngoài */
+
+            //// thẻ product_image
+            //div_product_image.append(img_AnhDaiDien)
+
+
+            //// thẻ div favorite khong có gì nên khỏi thêm
+
+            //// div_product_bubble
+            //div_product_bubble.append(span_in_product_bubble)
+
+
+            ////div_product_info
+            //h6_product_name.append(a_in_h6_ten_sp);
+            //div_product_price.append(span_gia_sp);
+
+            //div_product_info.append(h6_product_name)
+            //div_product_info.append(div_product_price)
+
+            //// div_product_filter
+            //div_product_filter.append(div_product_image); // thêm thẻ div_product_image vào bên trong thẻ div_product_filter
+            //div_product_filter.append(div_favorite_left)
+            //div_product_filter.append(div_product_bubble)
+            //div_product_filter.append(div_product_info)
+
+            //// thẻ div add to card
+            //div_add_to_cart_button.append(a_add_to_card)
+
+            //// thêm div_product_filter vào thẻ div ngoài cùng
+            //div_product_item.append(div_product_filter)
+            //div_product_item.append(div_add_to_cart_button)
+
+
+            //// theem item vao container
+            //container.append(div_product_item)
+
+
+        }
+
+    }
+
+</script>

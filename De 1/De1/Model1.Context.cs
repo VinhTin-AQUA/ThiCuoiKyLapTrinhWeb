@@ -13,10 +13,10 @@ namespace ThiCuoiKy
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class QLBanQuanAoEntities2 : DbContext
+    public partial class QLBanQuanAoEntities3 : DbContext
     {
-        public QLBanQuanAoEntities2()
-            : base("name=QLBanQuanAoEntities2")
+        public QLBanQuanAoEntities3()
+            : base("name=QLBanQuanAoEntities3")
         {
         }
     

@@ -1,0 +1,61 @@
+﻿@model SanPham
+@{
+    ViewBag.Title = "Edit";
+}
+
+<div class="new_arrivals" style="margin-top: 200px">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                @using (Html.BeginForm("Edit", "Home"))
+                {
+                    <div class="form-group">
+                        @*@Html.DisplayNameFor(m => m.TenSanPham)*@
+                        @Html.DisplayNameFor(m => m.TenSanPham)
+                        @Html.EditorFor(model => model.TenSanPham, null,  new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.TenSanPham)
+                    </div>
+
+                    <div class="form-group">
+                        @*@Html.DisplayNameFor(m => m.TenSanPham)*@
+                        @Html.DisplayNameFor(m => m.DonGiaBanNhoNhat)
+                        @Html.EditorFor(model => model.DonGiaBanNhoNhat, null,  new { htmlAttributes =  new { htmlAttributes = new { @class = "form-control" } } })
+                        @Html.ValidationMessageFor(model => model.DonGiaBanNhoNhat)
+                    </div>
+
+                    <div class="form-group">
+                        @*@Html.DisplayNameFor(m => m.TenSanPham)*@
+                        @Html.DisplayNameFor(m => m.TrangThai)
+                        @Html.EditorFor(model => model.TrangThai, null,  new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.TrangThai)
+                    </div>
+
+                    <div class="form-group">
+                        @Html.DisplayNameFor(m => m.MoTaNgan)
+                        @Html.TextAreaFor(model => model.MoTaNgan, new { rows = 4, columns = 40, @class = "form-control" })
+                        @Html.ValidationMessageFor(model => model.MoTaNgan)
+                    </div>
+
+                    <div class="form-group">
+                        <img src="@Model.AnhDaiDien" />
+
+                    </div>
+
+                    <div class="form-group">
+                        @Html.DisplayNameFor(m => m.NoiBat)
+                        @Html.EditorFor(model => model.NoiBat, null,  new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.NoiBat)
+                    </div>
+
+                    <div class="form-group">
+                        @Html.DisplayNameFor(m => m.GiaNhap)
+                        @Html.EditorFor(model => model.GiaNhap, null,  new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.GiaNhap)
+                    </div>
+                }
+
+            </div>
+
+        </div>
+    </div>
+</div>

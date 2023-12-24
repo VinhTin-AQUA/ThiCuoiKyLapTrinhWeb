@@ -22,7 +22,6 @@ namespace ThiCuoiKy
     
         public int MaSanPham { get; set; }
         public string TenSanPham { get; set; }
-        public string GiaNhap { get; set; }
         public Nullable<decimal> DonGiaBanNhoNhat { get; set; }
         public string TrangThai { get; set; }
         public string MoTaNgan { get; set; }
@@ -30,6 +29,7 @@ namespace ThiCuoiKy
         public string NoiBat { get; set; }
         public Nullable<int> MaPhanLoaiPhu { get; set; }
         public Nullable<int> MaPhanLoai { get; set; }
+        public Nullable<decimal> GiaNhap { get; set; }
     
         public virtual PhanLoai PhanLoai { get; set; }
         public virtual PhanLoaiPhu PhanLoaiPhu { get; set; }

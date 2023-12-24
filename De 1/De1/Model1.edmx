@@ -89,7 +89,6 @@
           </Key>
           <Property Name="MaSanPham" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="TenSanPham" Type="nvarchar" MaxLength="250" />
-          <Property Name="GiaNhap" Type="nvarchar" MaxLength="250" />
           <Property Name="DonGiaBanNhoNhat" Type="decimal" Precision="18" Scale="0" />
           <Property Name="TrangThai" Type="nvarchar" MaxLength="250" />
           <Property Name="MoTaNgan" Type="nvarchar" MaxLength="250" />
@@ -97,6 +96,7 @@
           <Property Name="NoiBat" Type="nvarchar" MaxLength="250" />
           <Property Name="MaPhanLoaiPhu" Type="int" />
           <Property Name="MaPhanLoai" Type="int" />
+          <Property Name="GiaNhap" Type="decimal" Precision="18" Scale="0" />
         </EntityType>
         <EntityType Name="SPTheoMau">
           <Key>
@@ -362,7 +362,6 @@
           </Key>
           <Property Name="MaSanPham" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="TenSanPham" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
-          <Property Name="GiaNhap" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
           <Property Name="DonGiaBanNhoNhat" Type="Decimal" Precision="18" Scale="0" />
           <Property Name="TrangThai" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
           <Property Name="MoTaNgan" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
@@ -370,6 +369,7 @@
           <Property Name="NoiBat" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
           <Property Name="MaPhanLoaiPhu" Type="Int32" />
           <Property Name="MaPhanLoai" Type="Int32" />
+          <Property Name="GiaNhap" Type="Decimal" Precision="18" Scale="0" />
           <NavigationProperty Name="PhanLoai" Relationship="Self.FK__SanPham__MaPhanL__412EB0B6" FromRole="SanPham" ToRole="PhanLoai" />
           <NavigationProperty Name="PhanLoaiPhu" Relationship="Self.FK__SanPham__MaPhanL__403A8C7D" FromRole="SanPham" ToRole="PhanLoaiPhu" />
           <NavigationProperty Name="SPTheoMaus" Relationship="Self.FK__SPTheoMau__MaSan__45F365D3" FromRole="SanPham" ToRole="SPTheoMau" />
@@ -494,7 +494,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="QLBanQuanAoEntities2" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="QLBanQuanAoEntities3" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="AnhChiTietSPs" EntityType="Self.AnhChiTietSP" />
           <EntitySet Name="ChiTietDonHangs" EntityType="Self.ChiTietDonHang" />
           <EntitySet Name="ChiTietSPBans" EntityType="Self.ChiTietSPBan" />
@@ -547,7 +547,7 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="QLBanQuanAoModelStoreContainer" CdmEntityContainer="QLBanQuanAoEntities2">
+        <EntityContainerMapping StorageEntityContainer="QLBanQuanAoModelStoreContainer" CdmEntityContainer="QLBanQuanAoEntities3">
           <EntitySetMapping Name="AnhChiTietSPs">
             <EntityTypeMapping TypeName="QLBanQuanAoModel.AnhChiTietSP">
               <MappingFragment StoreEntitySet="AnhChiTietSP">
@@ -638,7 +638,6 @@
               <MappingFragment StoreEntitySet="SanPham">
                 <ScalarProperty Name="MaSanPham" ColumnName="MaSanPham" />
                 <ScalarProperty Name="TenSanPham" ColumnName="TenSanPham" />
-                <ScalarProperty Name="GiaNhap" ColumnName="GiaNhap" />
                 <ScalarProperty Name="DonGiaBanNhoNhat" ColumnName="DonGiaBanNhoNhat" />
                 <ScalarProperty Name="TrangThai" ColumnName="TrangThai" />
                 <ScalarProperty Name="MoTaNgan" ColumnName="MoTaNgan" />
@@ -646,6 +645,7 @@
                 <ScalarProperty Name="NoiBat" ColumnName="NoiBat" />
                 <ScalarProperty Name="MaPhanLoaiPhu" ColumnName="MaPhanLoaiPhu" />
                 <ScalarProperty Name="MaPhanLoai" ColumnName="MaPhanLoai" />
+                <ScalarProperty Name="GiaNhap" ColumnName="GiaNhap" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
