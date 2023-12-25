@@ -1,0 +1,42 @@
+select *
+from SanPham
+
+Update SanPham
+set AnhDaiDien = 'product_1.png'
+where MaSanPham = 1
+
+Update SanPham
+set AnhDaiDien = 'product_2.png'
+where MaSanPham = 2
+
+Update SanPham
+set AnhDaiDien = 'product_3.png'
+where MaSanPham = 3
+
+Update SanPham
+set AnhDaiDien = 'product_4.png'
+where MaSanPham = 4
+
+Update SanPham
+set AnhDaiDien = 'product_5.png'
+where MaSanPham = 5
+
+Update SanPham
+set AnhDaiDien = 'product_6.png'
+where MaSanPham = 6
+
+Update SanPham
+set AnhDaiDien = 'product_7.png'
+where MaSanPham = 7
+
+Update SanPham
+set AnhDaiDien = 'product_8.png'
+where MaSanPham = 8
+
+Update SanPham
+set AnhDaiDien = 'product_9.png'
+where MaSanPham = 9
+
+Update SanPham
+set AnhDaiDien = 'product_10.png'
+where MaSanPham = 10
